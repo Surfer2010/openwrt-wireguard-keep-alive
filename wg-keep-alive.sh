@@ -30,14 +30,18 @@ fi
 if [ $? -eq 1 ]; then
    echo "Ooops, Wireguard is down!"
    echo "$(date) OFFLINE > RESTARTING INTERFACE" >> $LOG_FILE
+   
+ if [ $? -eq 1 ]; then
+   echo "Ooops, Wireguard is down!"
+   echo "$(date) OFFLINE > RESTARTING INTERFACE" >> $LOG_FILE
 
- #  if [[ "$OFFLINE_COUNT" -ge "$OFFLINE_COUNT_TRESHOLD" ]]; then
- #     echo ">> Checking wireguard connectivity.." >> $LOG_FILE
- #     $SH_4G_DNS_TEST
- #  else
+   if [[ "$OFFLINE_COUNT" -ge "$OFFLINE_COUNT_TRESHOLD" ]]; then
+      echo ">> Checking wireguard connectivity.." >> $LOG_FILE
+      $SH_WG_TEST
+   else
       echo ">> Restarting wireguard-interface.." >> $LOG_FILE
-      #$SH_RESTART_INTERFACE
- #  fi
+#      $SH_RESTART_INTERFACE
+   fi
 else
    echo "Wireguard is okay!"
    echo "$(date) ONLINE" >> $LOG_FILE
