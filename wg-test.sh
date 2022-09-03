@@ -21,8 +21,10 @@ for i in `seq 1 $PACKET_COUNT`;
 
 if [ $ONLINE -eq 1 ]; then
     # ONLINE
+    echo "wg is connected"
     exit 0
 else
     # OFFLINE
+    echo "wg NOT connected"
     exit 1
 fi
