@@ -1,3 +1,6 @@
+#------------------------------------------------------------------------------------
+#------------------root@OpenWrt:~# cat wg-test.sh-----------------------------
+#------------------------------------------------------------------------------------
 #!/bin/ash
 # This file is responsible for DNS check. The return value of its process
 # determines the ONLINE/OFFLINE state.
