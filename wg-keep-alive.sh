@@ -4,7 +4,7 @@
 
 #!/bin/ash
 # The main script file. I recommend putting into cron, e.g.:
-# */2 * * * * /root/wg-skript/wg-keep-alive.sh
+# */2 * * * * /root/scripts/wg-keep-alive.sh
 
 DIR=$( cd $(dirname $0) ; pwd -P )
 LOG_FILE="$DIR/log-wg.txt"
