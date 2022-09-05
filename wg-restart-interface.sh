@@ -17,3 +17,4 @@ ifdown $INTERFACE
 sleep 2
 
 echo "SH RESTART IFACE UP"
+ifup $INTERFACE
