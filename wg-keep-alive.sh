@@ -25,7 +25,7 @@ if [[ "$LINES_COUNT" -ge "$LINES_MAX" ]]; then
 fi
 
 # DNS test, it's result defines the ONLINE/OFFLINE state
-`$SH_WG_TEST`
+/bin/ash $SH_WG_TEST
 
 if [ $? -eq 1 ]; then
    echo "Ooops, Wireguard is down!"
